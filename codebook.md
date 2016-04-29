@@ -37,8 +37,11 @@ Next we copy the Ask3 data.frame to Ask4.as a data.frame, because we already hav
 
 ##Question 5)
 Next we leverage the ddply function to *group* the dataframe and calculate the means column wise for each activity. 
-the result are 30 objects with 6 activities and result in a data.frame with 180 obs. and 563 columns
-we store that in Ask5 as a data.frame
+the result are 30 objects with 6 activities and result in a data.frame with 180 obs. and 88 columns
+we store that in Ask5 as a data.frame, the 
+  Subject column is an integer
+  Activity is an Factor with 6 levels
+  All the other column are float representing the mean of the columns based on groupings
 *(From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject)*
 
 Last we save Ask1-Ask5 to sidk as .csv for further coding
