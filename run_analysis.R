@@ -95,13 +95,14 @@ colnames(features) <- c("Index", "Description")
 # binds it together
 Ask1 <- rbind(readFiles("train"),readFiles("test"))
 print(" Ask 1 is done....")
-# Here is Ask2 where we selet all the columns with mean and standard deviation 
+# Here is Ask2 where we selet all the columns with mean and std
 # result is in Ask2
 IndexMeanStd <- sort(c(grep("mean", names(Ask1), ignore.case=T),grep("std", names(Ask1), ignore.case=T)))
 Ask2 <- Ask1[IndexMeanStd]
+Ask2 <- cbind (Ask1[,1:2],Ask2)
 print(" Ask 2 is done....")
 # Here Ask 3 we change the numbers to the activity description and stor it in Ask3
-Ask3 <- Ask1
+Ask3 <- Ask2
 s <- Ask3$Activity
 Activity <- activityLabels$Description[s]
 Ask3$Activity <- NULL
@@ -124,4 +125,4 @@ write.csv(Ask2,"./data/ask2.csv")
 write.csv(Ask3,"./data/ask3.csv")
 write.csv(Ask4,"./data/ask4.csv")
 write.csv(Ask5,"./data/ask5.csv")
-print("All file are written to disk... Task done....")
+print("All file are written to disk... Task done....")        
