@@ -17,6 +17,7 @@ It returns a data.frame corresponding to the data in the .zip file with the righ
 
 ##main script flow
 reading the activity lables first and stroe it in activitaLabel-variable
+
 ### Question 1)
 using rbind to combind the test and train information loaded with the function readFiles
 Store the result in Ask1 as data.frame *(Merges the training and the test sets to create one data set)*
